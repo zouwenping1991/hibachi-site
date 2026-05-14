@@ -1,0 +1,38 @@
+.book-btn {
+  display: inline-block;
+  padding: 22px 50px;
+  background: linear-gradient(45deg, #000, #333);
+  color: white;
+  font-size: 26px;
+  font-weight: 700;
+  border-radius: 14px;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  transition: all 0.25s ease;
+}
+
+.book-btn:hover {
+  transform: scale(1.08);
+  background: linear-gradient(45deg, #111, #555);
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 5px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+/* when clicked */
+.form-input:focus {
+  border-bottom: 2px solid #000;
+}
+label {
+  display: block;
+  margin-top: 20px;
+  font-weight: 600;
+}

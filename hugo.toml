@@ -1,0 +1,23 @@
+baseURL = "http://localhost/"
+title = "Authentic Hibachi"
+theme = "PaperMod"
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "Book Online"
+url = "/book-online/"
+weight = 2
+
+[[menu.main]]
+name = "Gallery"
+url = "/gallery/"
+weight = 3
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
