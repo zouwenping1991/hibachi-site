@@ -9,11 +9,13 @@
     <lastBuildDate>Thu, 14 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>First Post</title>
+      <title>Bring live hibachi to your home</title>
       <link>http://localhost:1313/posts/first/</link>
       <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/first/</guid>
-      <description>&lt;p&gt;Hello Hibachi 👋&lt;/p&gt;</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;-ready-to-book&#34;&gt;🍽️ Ready to book?&lt;/h2&gt;
+&lt;p&gt;👉 &lt;a href=&#34;http://localhost:1313/book-online/&#34; class=&#34;book-btn&#34;&gt;🍽️ BOOK NOW&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

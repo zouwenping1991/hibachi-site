@@ -81,26 +81,57 @@ draft: false
 document.getElementById("bookingForm").addEventListener("submit", async function(e) {
   e.preventDefault();
 
+  const submitBtn = this.querySelector("button");
+  submitBtn.disabled = true;
+  submitBtn.innerText = "Calculating...";
+
   const data = {
     fullname: this.fullname.value,
     email: this.email.value,
     phone: this.phone.value,
+    contact: this.contact.value,
     date: this.date.value,
     time: this.time.value,
     address: this.address.value,
     guests: this.guests.value
   };
 
-  const res = await fetch("https://hibachi-backend-5rfq.onrender.com/book", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  });
+  try {
 
-  const result = await res.json();
+    const res = await fetch("https://hibachi-backend-5rfq.onrender.com/book", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
 
-    alert(result.success ? "Booking sent!" : "Failed to send");
+    const result = await res.json();
+
+    if (result.success) {
+
+      alert(
+        "Booking Request Sent!\n\n" +
+        "Distance: " + result.distanceMiles + " miles\n" +
+        "Travel Fee: $" + result.travelFee
+      );
+
+      this.reset();
+
+    } else {
+
+      alert(result.message || "Failed to send booking");
+
+    }
+
+  } catch (err) {
+
+    alert("Server error");
+
+  }
+
+  submitBtn.disabled = false;
+  submitBtn.innerText = "Submit Booking Request";
+
 });
 </script>
