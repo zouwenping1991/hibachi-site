@@ -540,8 +540,8 @@ document.getElementById("bookingForm").addEventListener("submit", async function
     }
 
   } catch (err) {
-    console.error(err);
-    alert("Server error: " + err.message);
+    console.error("Frontend Error:", err);
+    alert("Server connection failed.");
   }
 
   submitBtn.disabled = false;
