@@ -495,7 +495,17 @@ document.getElementById("bookingForm").addEventListener("submit", async function
 
   const submitBtn = this.querySelector('button[type="submit"]');
   submitBtn.disabled = true;
-  submitBtn.innerText = "Calculating...";
+  if (result.success) {
+
+  submitBtn.innerText =
+    "Your request was submitted!";
+
+  alert(
+    "Booking Request Sent!\n\n" +
+    result.travelMessage
+  );
+
+  this.reset();
 
   const data = {
   fullname: this.fullname.value,
