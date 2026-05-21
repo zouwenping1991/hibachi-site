@@ -514,7 +514,7 @@ document.getElementById("bookingForm").addEventListener("submit", async function
   hearAboutUs: this.hearAboutUs.value,
   agreePolicy: this.agreePolicy.checked,
   agreeTerms: this.agreeTerms.checked,
-  agreeTravelPolicy: this.agreeTravelPolicy.checked,
+  agreeTravelPolicy: this.agreeTravelPolicy.checked
 
 };
 
