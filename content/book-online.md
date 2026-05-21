@@ -547,7 +547,10 @@ document.getElementById("bookingForm").addEventListener("submit", async function
 
     const result = await res.json();
 
-    if (result.success) {
+     if (result.success) {
+
+      submitBtn.innerText =
+        "Your request was submitted!";
 
       alert(
         "Booking Request Sent!\n\n" +
@@ -558,19 +561,27 @@ document.getElementById("bookingForm").addEventListener("submit", async function
 
     } else {
 
-      alert(result.message || "Failed to send booking");
+      alert(
+        result.message || "Failed to send booking"
+      );
 
+      submitBtn.innerText =
+        "Submit Booking Request";
     }
 
   } catch (err) {
 
     console.error(err);
-    alert("Server error: " + err.message);
 
+    alert(
+      "Server error: " + err.message
+    );
+
+    submitBtn.innerText =
+      "Submit Booking Request";
   }
 
   submitBtn.disabled = false;
-  submitBtn.innerText = "Submit Booking Request";
 
 });
 </script>
