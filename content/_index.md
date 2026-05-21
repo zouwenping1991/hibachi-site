@@ -51,6 +51,6 @@ Houston, Texas & surrounding areas
 ## 📞 Book Your Event Today
 Phone call: 713-856-3251
 
-Email: authentichibachi@gmail.com
+Email: authentichibachi@southflamellc.com
 
 Let’s bring the grill to you 🔥
