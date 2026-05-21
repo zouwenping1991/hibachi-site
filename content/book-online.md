@@ -100,16 +100,46 @@ draft: false
 
 </select><br>
 
-<!-- Street Address -->
-<label for="streetAddress"><strong>Location/Event Address (Please Do Not Forget Zip Code)*</strong></label>
-<input
-  type="text"
-  id="streetAddress"
-  name="streetAddress"
-  placeholder="4401 Cougar Village Dr"
-  required
-  style="width:100%; padding:10px;"><br>
-<small>(*Please enter your full event location.)</small><br>
+<!-- Address + ZIP Row -->
+
+<div style="display:flex; gap:12px; flex-wrap:wrap;">
+
+  <!-- Street Address -->
+  <div style="flex:3; min-width:250px;">
+    <label for="streetAddress">
+      <strong>Location/Event Address *</strong>
+    </label>
+    <input
+      type="text"
+      id="streetAddress"
+      name="streetAddress"
+      placeholder="4401 Cougar Village Dr"
+      required
+      style="
+        width:100%;
+        padding:10px;
+        box-sizing:border-box;">
+
+  </div>
+
+  <!-- ZIP Code -->
+  <div style="flex:1; min-width:120px;">
+
+  <label for="zipcode">
+      <strong>ZIP Code *</strong>
+    </label>
+    <input
+      type="text"
+      id="zipcode"
+      name="zipcode"
+      placeholder="77004"
+      required
+      style="
+        width:100%;
+        padding:10px;
+        box-sizing:border-box;">
+ </div>
+  </div><br>
 <!-- Guest Counts -->
 <div style="display:flex; gap:0px; flex-wrap:wrap;">
   <!-- Adults -->
