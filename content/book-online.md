@@ -541,8 +541,7 @@ document.getElementById("bookingForm").addEventListener("submit", async function
 
       alert(
         "Booking Request Sent!\n\n" +
-        "Distance: " + (result.distanceMiles === "Unknown"? "Could not calculate": result.distanceMiles + " miles") + "\n" +
-        "Travel Fee: $" + result.travelFee
+        result.travelMessage
       );
 
       this.reset();
@@ -555,7 +554,8 @@ document.getElementById("bookingForm").addEventListener("submit", async function
 
   } catch (err) {
 
-    alert("Server error");
+    console.error(err);
+    alert("Server error: " + err.message);
 
   }
 
