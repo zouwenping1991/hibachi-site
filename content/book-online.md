@@ -68,6 +68,11 @@ draft: false
   name="state"
   required
   style="width:100%; padding:10px;">
+
+  <option value="" selected disabled>
+    Select Your State
+  </option>
+  
   <option value="Texas">Texas</option>
 </select><br>
 
@@ -79,7 +84,9 @@ draft: false
   required
   style="width:100%; padding:10px;">
 
-  <option value="">Select Your City</option>
+  <option value="" selected disabled>
+    Select Your City
+  </option>
 
   <option value="Houston">Houston</option>
   <option value="Sugar Land">Sugar Land</option>

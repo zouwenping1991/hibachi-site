@@ -222,6 +222,9 @@ id="state"
 name="state"
 required
 style="width:100%; padding:10px;"></p>
+  <option value="" selected disabled>
+    Select Your State
+  </option>
   <option value="Texas">Texas</option>
 </select><br>
 <!-- City -->
@@ -231,7 +234,9 @@ id="city"
 name="city"
 required
 style="width:100%; padding:10px;"></p>
-  <option value="">Select Your City</option>
+  <option value="" selected disabled>
+    Select Your City
+  </option>
   <option value="Houston">Houston</option>
   <option value="Sugar Land">Sugar Land</option>
   <option value="Katy">Katy</option>
@@ -626,7 +631,7 @@ document.getElementById("bookingForm").addEventListener("submit", async function
   hearAboutUs: this.hearAboutUs.value,
   agreePolicy: this.agreePolicy.checked,
   agreeTerms: this.agreeTerms.checked,
-  agreeTravelPolicy: this.agreeTravelPolicy.checked,
+  agreeTravelPolicy: this.agreeTravelPolicy.checked
 
 };
 
