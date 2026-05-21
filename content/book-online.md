@@ -547,35 +547,26 @@ document.getElementById("bookingForm").addEventListener("submit", async function
 
     const result = await res.json();
 
-     if (result.success) {
+    if (result.success) {
 
-      submitBtn.innerText =
-        "Your request was submitted!";
+      submitBtn.innerText = "Submitted!";
 
-      alert(
-        "Booking Request Sent!\n\n" +
-        result.travelMessage
-      );
+      alert("Your request was submitted!");
 
       this.reset();
 
     } else {
 
-      alert(
-        result.message || "Failed to send booking"
-      );
+      alert(result.message || "Failed to send booking");
 
       submitBtn.innerText =
-        "Submit Booking Request";
+      "Submit Booking Request";
     }
-
   } catch (err) {
 
     console.error(err);
 
-    alert(
-      "Server error: " + err.message
-    );
+    alert("Server error: " + err.message);
 
     submitBtn.innerText =
       "Submit Booking Request";
