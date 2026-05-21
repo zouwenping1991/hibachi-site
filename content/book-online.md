@@ -69,10 +69,10 @@ draft: false
   required
   style="width:100%; padding:10px;">
 
-  <option value="" selected disabled>
+<option value="" selected disabled>
     Select Your State
-  </option>
-  
+</option>
+
   <option value="Texas">Texas</option>
 </select><br>
 
@@ -162,7 +162,7 @@ draft: false
           background:none;
           border:none;
           color:white;
-          font-size:32px;
+          font-size:20px;
           cursor:pointer;
         "
       >
@@ -493,7 +493,7 @@ A travel fee of $50 will be applied to hibachi events in the Houston, and $75-$1
 document.getElementById("bookingForm").addEventListener("submit", async function(e) {
   e.preventDefault();
 
-  const submitBtn = this.querySelector("button");
+  const submitBtn = this.querySelector('button[type="submit"]');
   submitBtn.disabled = true;
   submitBtn.innerText = "Calculating...";
 
