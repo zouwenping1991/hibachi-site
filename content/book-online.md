@@ -495,48 +495,33 @@ document.getElementById("bookingForm").addEventListener("submit", async function
 
   const submitBtn = this.querySelector('button[type="submit"]');
   submitBtn.disabled = true;
-  if (result.success) {
-
-  submitBtn.innerText =
-    "Your request was submitted!";
-
-  alert(
-    "Booking Request Sent!\n\n" +
-    result.travelMessage
-  );
-
-  this.reset();
+  submitBtn.innerText = "Submitting...";
 
   const data = {
-  fullname: this.fullname.value,
-  email: this.email.value,
-  phone: this.phone.value,
-  contact: this.contact.value,
-  date: this.date.value,
-  time: this.time.value,
-
-  state: this.state.value,
-  city: this.city.value,
-  streetAddress: this.streetAddress.value,
-  zipcode: this.zipcode.value,
-
-  adults: this.adults.value,
-  kids: this.kids.value,
-
-  foodOrder: this.foodOrder.value,
-  foodAllergies: this.foodAllergies.value,
-  addons: this.addons.value,
-  specialInstructions: this.specialInstructions.value,
-  promoCode: this.promoCode.value,
-  hearAboutUs: this.hearAboutUs.value,
-  agreePolicy: this.agreePolicy.checked,
-  agreeTerms: this.agreeTerms.checked,
-  agreeTravelPolicy: this.agreeTravelPolicy.checked
-
-};
+    fullname: this.fullname.value,
+    email: this.email.value,
+    phone: this.phone.value,
+    contact: this.contact.value,
+    date: this.date.value,
+    time: this.time.value,
+    state: this.state.value,
+    city: this.city.value,
+    streetAddress: this.streetAddress.value,
+    zipcode: this.zipcode.value,
+    adults: this.adults.value,
+    kids: this.kids.value,
+    foodOrder: this.foodOrder.value,
+    foodAllergies: this.foodAllergies.value,
+    addons: this.addons.value,
+    specialInstructions: this.specialInstructions.value,
+    promoCode: this.promoCode.value,
+    hearAboutUs: this.hearAboutUs.value,
+    agreePolicy: this.agreePolicy.checked,
+    agreeTerms: this.agreeTerms.checked,
+    agreeTravelPolicy: this.agreeTravelPolicy.checked
+  };
 
   try {
-
     const res = await fetch("https://hibachi-backend-5rfq.onrender.com/book", {
       method: "POST",
       headers: {
@@ -548,32 +533,19 @@ document.getElementById("bookingForm").addEventListener("submit", async function
     const result = await res.json();
 
     if (result.success) {
-
-      submitBtn.innerText = "Submitted!";
-
       alert("Your request was submitted!");
-
       this.reset();
-
     } else {
-
       alert(result.message || "Failed to send booking");
-
-      submitBtn.innerText =
-      "Submit Booking Request";
     }
+
   } catch (err) {
-
     console.error(err);
-
     alert("Server error: " + err.message);
-
-    submitBtn.innerText =
-      "Submit Booking Request";
   }
 
   submitBtn.disabled = false;
-
+  submitBtn.innerText = "Submit Booking Request";
 });
 </script>
 
