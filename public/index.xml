@@ -24,23 +24,24 @@
       <guid>http://localhost:1313/book-online/</guid>
       <description>&lt;h1 id=&#34;-book-your-hibachi-experience&#34;&gt;📅 Book Your Hibachi Experience&lt;/h1&gt;
 &lt;form id=&#34;bookingForm&#34;&gt;
-&lt;p&gt;&lt;label&gt;May we have your first and last name please? *&lt;/label&gt;&lt;br&gt;
-&lt;input type=&#34;text&#34; name=&#34;fullname&#34; placeholder=&#34;First and Last Name&#34; required style=&#34;width:100%;padding:10px;&#34;&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;label&gt;&lt;strong&gt;May we have your first and last name please? *&lt;/strong&gt;&lt;/label&gt;
+&lt;input type=&#34;text&#34; name=&#34;fullname&#34; placeholder=&#34;First and Last Name&#34; required style=&#34;width:100%;padding:10px;&#34;&gt;&lt;/p&gt;
   &lt;!-- Email --&gt;
-&lt;p&gt;&lt;label&gt;Email address *&lt;/label&gt;&lt;br&gt;
-&lt;input type=&#34;email&#34; name=&#34;email&#34; placeholder=&#34;me@email.com&#34; required style=&#34;width:100%;padding:10px;&#34;&gt;&lt;br&gt;&lt;br&gt;
-&lt;label&gt;Phone number *&lt;/label&gt;&lt;br&gt;
-&lt;input type=&#34;tel&#34; name=&#34;phone&#34; placeholder=&#34;(xxx) xxx-xxxx&#34; required style=&#34;width:100%;padding:10px;&#34;&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;label&gt;&lt;strong&gt;Email address *&lt;/strong&gt;&lt;/label&gt;
+&lt;input type=&#34;email&#34; name=&#34;email&#34; placeholder=&#34;me@email.com&#34; required style=&#34;width:100%;padding:10px;&#34;&gt;
+&lt;br&gt;
+&lt;label&gt;&lt;strong&gt;Phone number *&lt;/strong&gt;&lt;/label&gt;
+&lt;input type=&#34;tel&#34; name=&#34;phone&#34; placeholder=&#34;(xxx) xxx-xxxx&#34; required style=&#34;width:100%;padding:10px;&#34;&gt;&lt;/p&gt;
   &lt;!-- Contact method --&gt;
-&lt;p&gt;&lt;label&gt;My preferred method of contact is:&lt;/label&gt;&lt;br&gt;
-&lt;input type=&#34;radio&#34; name=&#34;contact&#34; value=&#34;email&#34;&gt; Email&lt;br&gt;
-&lt;input type=&#34;radio&#34; name=&#34;contact&#34; value=&#34;phone&#34;&gt; Phone Call&lt;br&gt;
-&lt;input type=&#34;radio&#34; name=&#34;contact&#34; value=&#34;none&#34;&gt; No Preference&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;label&gt;&lt;strong&gt;My preferred method of contact is:&lt;/strong&gt;&lt;/label&gt;&lt;br&gt;
+&lt;input type=&#34;radio&#34; name=&#34;contact&#34; value=&#34;email&#34;&gt; Email
+&lt;input type=&#34;radio&#34; name=&#34;contact&#34; value=&#34;phone&#34;&gt; Phone Call
+&lt;input type=&#34;radio&#34; name=&#34;contact&#34; value=&#34;none&#34;&gt; No Preference&lt;/p&gt;
   &lt;!-- Date --&gt;
-&lt;p&gt;&lt;label&gt;Date of your event *&lt;/label&gt;&lt;br&gt;
-&lt;input type=&#34;date&#34; name=&#34;date&#34; required style=&#34;width:100%;padding:10px;&#34;&gt;&lt;br&gt;&lt;br&gt;
-&lt;label&gt;Preferred Event Time *&lt;/label&gt;&lt;br&gt;
-&lt;select name=&#34;time&#34; required style=&#34;width:100%;padding:10px;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;label&gt;&lt;strong&gt;Date of your event *&lt;/strong&gt;&lt;/label&gt;&lt;br&gt;
+&lt;input type=&#34;date&#34; name=&#34;date&#34; required style=&#34;width:100%;padding:10px;&#34;&gt;&lt;br&gt;
+&lt;label&gt;&lt;strong&gt;Preferred Event Time *&lt;/strong&gt;&lt;/label&gt;
+&lt;select name=&#34;time&#34; required style=&#34;width:100%;padding:14px;&#34;&gt;&lt;/p&gt;
   &lt;option value=&#34;&#34;&gt;Select time&lt;/option&gt;
   &lt;option value=&#34;12:00&#34;&gt;12:00 PM&lt;/option&gt;
   &lt;option value=&#34;12:30&#34;&gt;12:30 PM&lt;/option&gt;
@@ -62,7 +63,15 @@
   &lt;option value=&#34;20:30&#34;&gt;8:30 PM&lt;/option&gt;
   &lt;option value=&#34;21:00&#34;&gt;9:00 PM&lt;/option&gt;
   &lt;option value=&#34;21:30&#34;&gt;9:30 PM&lt;/option&gt;
-&lt;p&gt;&lt;/select&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;</description>
+&lt;/select&gt;&lt;br&gt;
+&lt;!-- Event Location --&gt;
+&lt;!-- State --&gt;
+&lt;p&gt;&lt;label for=&#34;state&#34;&gt;&lt;strong&gt;State *&lt;/strong&gt;&lt;/label&gt;
+&lt;select
+id=&#34;state&#34;
+name=&#34;state&#34;
+required
+style=&#34;width:100%; padding:10px;&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
