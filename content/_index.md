@@ -21,7 +21,72 @@ title: "Hibachi at Home"
   <img src="/images/hibachi3.jpg" width="700">
 </p>
 
-Private outdoor hibachi chef for birthdays, backyard parties, family gatherings, and corporate events in Houston, Katy, Sugar Land, Cypress, Pearland and surrounding areas.
+<div style="
+display:flex;
+justify-content:center;
+gap:50px;
+flex-wrap:wrap;
+margin:40px 0;
+text-align:center;
+">
+
+  <div>
+    <div style="
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      border:2px solid #666;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:auto;
+      font-size:28px;
+    ">
+      🔥
+    </div>
+    <h2 style="margin:10px 0 0 0;">500+</h2>
+    <p>Parties Served</p>
+  </div>
+
+  <div>
+    <div style="
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      border:2px solid #666;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:auto;
+      font-size:28px;
+    ">
+      ⭐
+    </div>
+    <h2 style="margin:10px 0 0 0;">1K+</h2>
+    <p>5-Star Ratings</p>
+  </div>
+
+  <div>
+    <div style="
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      border:2px solid #666;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:auto;
+      font-size:28px;
+    ">
+      📍
+    </div>
+    <h2 style="margin:10px 0 0 0;">10+</h2>
+    <p>Cities Served</p>
+  </div>
+
+</div>
+
+Private outdoor hibachi chef for birthdays, backyard parties, family gatherings, and corporate events in Houston, Katy, Sugar Land, Missoury City, Cypress, Pearland and surrounding areas.
 
 Fresh food. Live teppanyaki cooking. Unforgettable entertainment.
 
