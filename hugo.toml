@@ -2,6 +2,7 @@ baseURL = "https://authentichibachi.com/"
 title = "Authentic Hibachi"
 theme = "PaperMod"
 
+
 [[menu.main]]
 name = "Home"
 url = "/"
@@ -21,3 +22,9 @@ weight = 3
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+
+[params.label]
+text = "Authentic Hibachi"
+icon = "/images/logo.jpg"
+iconHeight = 60
