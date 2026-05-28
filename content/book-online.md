@@ -263,6 +263,7 @@ draft: false
   name="foodOrder"
   required
   rows="4"
+  placeholder="Collecting Orders / TBA" 
   style="
     width:100%;
     padding:18px;
@@ -272,7 +273,7 @@ draft: false
     resize:vertical;
     box-sizing:border-box;
   "
-  >Collecting Orders / TBA</textarea>
+  ></textarea>
 <br><br>
 <!-- Optional Add-Ons -->
 
