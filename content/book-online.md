@@ -272,7 +272,8 @@ draft: false
     resize:vertical;
     box-sizing:border-box;
   "
-></textarea><br><br>
+  >Collecting Orders / TBA</textarea>
+<br><br>
 <!-- Optional Add-Ons -->
 
 <label for="addons" style="font-size:18px;">
@@ -455,7 +456,7 @@ draft: false
 
 
 <strong>Travel Fee Policy (Houston, & around Houston Area)</strong><br><br>
-A travel fee of $50 will be applied to hibachi events in the Houston, and $75-$100 around Houston areas (depends on distance). Please feel free to contact us if you have any inquiries regarding travel fees. If you are outside of these areas, please contact us for your event pricing and provide your ZIP code.
+A standard $50 travel fee applies to hibachi events within the Houston area. Additional travel fees may apply for locations outside Houston depending on distance. Please contact us with your ZIP code for a customized quote.
 <label
   style="
     display:flex;
@@ -482,86 +483,112 @@ A travel fee of $50 will be applied to hibachi events in the Houston, and $75-$1
   </span>
 
 </label><br>
-  <!-- Submit -->
-  <button type="submit" style="padding:12px 20px;background:black;color:white;">
-   Submit Booking Request
-  </button>
-
 </form>
 
+<p style="margin-top:20px; font-size:15px; color:#444; line-height:1.6;">
+  A $100 booking deposit is required and will be applied toward your final event balance.
+  Once your PayPal payment is successfully completed, your booking request will be automatically submitted and a confirmation email will be sent to you.
+  Deposits are refundable for cancellations made more than 48 hours before the event.
+</p>
+
+<div id="paypal-button-container" style="margin-top:25px;"></div>
+<p style="font-size:13px;color:#666; margin-top:10px;">
+  Secure checkout powered by PayPal.
+</p>
+
+<script src="https://www.paypal.com/sdk/js?client-id=AS13nFVpF92KuVSObR7YyskXrIh84Bx6A9lGIB4zTtkhIf9_6X3YPpLWU6d3-64_J2JHuUakxCuvCKh1&currency=USD"></script>
+
 <script>
-document.getElementById("bookingForm").addEventListener("submit", async function(e) {
-  e.preventDefault();
+paypal.Buttons({
+  createOrder: function (data, actions) {
+  const form = document.getElementById("bookingForm");
 
-  const submitBtn = this.querySelector('button[type="submit"]');
-  submitBtn.disabled = true;
-  submitBtn.innerText = "Submitting...";
+  if (!form.checkValidity()) {
+    const firstInvalid = form.querySelector(":invalid");
 
-  const data = {
-    fullname: this.fullname.value,
-    email: this.email.value,
-    phone: this.phone.value,
-    contact: this.contact.value,
-    date: this.date.value,
-    time: this.time.value,
-    state: this.state.value,
-    city: this.city.value,
-    streetAddress: this.streetAddress.value,
-    zipcode: this.zipcode.value,
-    adults: this.adults.value,
-    kids: this.kids.value,
-    foodOrder: this.foodOrder.value,
-    foodAllergies: this.foodAllergies.value,
-    addons: this.addons.value,
-    specialInstructions: this.specialInstructions.value,
-    promoCode: this.promoCode.value,
-    hearAboutUs: this.hearAboutUs.value,
-    agreePolicy: this.agreePolicy.checked,
-    agreeTerms: this.agreeTerms.checked,
-    agreeTravelPolicy: this.agreeTravelPolicy.checked
-  };
+    if (firstInvalid) {
+      firstInvalid.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
 
-  try {
-    const res = await fetch("https://hibachi-backend-5rfq.onrender.com/book", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    });
-
-    const result = await res.json();
-
-    if (result.success) {
-      alert("Your request was submitted!");
-      this.reset();
-    } else {
-      alert(result.message || "Failed to send booking");
+      firstInvalid.focus();
     }
 
-  } catch (err) {
-    console.error("Frontend Error:", err);
-    alert("Server connection failed.");
+    form.reportValidity();
+
+    return Promise.reject("Please complete all required fields first.");
   }
 
-  submitBtn.disabled = false;
-  submitBtn.innerText = "Submit Booking Request";
-});
+  return actions.order.create({
+    purchase_units: [{
+      description: "Authentic Hibachi Booking Deposit",
+      amount: {
+        currency_code: "USD",
+        value: "100.00"
+      }
+    }]
+  });
+},
+
+  onApprove: function (data, actions) {
+    return actions.order.capture().then(async function (details) {
+      const form = document.getElementById("bookingForm");
+      const formData = new FormData(form);
+      const bookingData = {};
+
+      formData.forEach((value, key) => {
+        bookingData[key] = value;
+      });
+
+      bookingData.agreePolicy = form.agreePolicy.checked;
+      bookingData.agreeTerms = form.agreeTerms.checked;
+      bookingData.agreeTravelPolicy = form.agreeTravelPolicy.checked;
+
+      bookingData.paypalOrderID = data.orderID;
+      bookingData.paypalPayerName =
+        details.payer.name.given_name + " " + details.payer.name.surname;
+      bookingData.paypalPayerEmail = details.payer.email_address;
+      bookingData.depositPaid = "Yes";
+      bookingData.depositAmount = "$100";
+
+      const response = await fetch("https://hibachi-backend-5rfq.onrender.com/book", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(bookingData)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert("Deposit paid. Your booking request has been submitted.");
+        form.reset();
+      } else {
+        alert(result.message || "Payment succeeded, but booking submission failed.");
+      }
+    });
+  },
+
+  onCancel: function () {
+    alert("Payment was cancelled. Booking was not submitted.");
+  },
+
+  onError: function (err) {
+    console.error("PayPal error:", err);
+    alert("PayPal payment error. Please try again.");
+  }
+}).render("#paypal-button-container");
 </script>
+
 
 <script>
 function changeCount(id, amount) {
-
-  const input =
-    document.getElementById(id);
-
-  let current =
-    parseInt(input.value) || 0;
-
+  const input = document.getElementById(id);
+  let current = parseInt(input.value) || 0;
   current += amount;
-
   if (current < 0) current = 0;
-
   input.value = current;
 }
 </script>

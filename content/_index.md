@@ -137,7 +137,7 @@ Chicken · Steak · Shrimp · Salmon · Tofu
 ---
 
 ## 📍 Area We Serve
-Houston • Katy • Sugar Land • Cypress • Pearland • Pasadena • The Woodlands • Richmond • Spring • Baytown • Galveston
+Houston • Katy • Sugar Land • Cypress • Missoury City • Pearland • Pasadena • The Woodlands • Richmond • Spring • Baytown • Galveston
 
 ## 📞 Book Your Event Today
 Phone call: 713-865-3251
