@@ -501,6 +501,9 @@ A standard $50 travel fee applies to hibachi events within the Houston area. Add
 <p style="margin-top:20px; font-size:15px; color:#444; line-height:1.6;">
   A $50 booking deposit is required and will be applied toward your final event balance.
   Once your PayPal payment is successfully completed, your booking request will be automatically submitted and a confirmation email will be sent to you.
+  <span style="color:#222; font-weight:600;">
+  (If you do not see it within a few minutes, please check your Spam/Junk folder.)
+</span>
   Deposits are refundable for cancellations made more than 48 hours before the event.
 </p>
 
@@ -563,7 +566,7 @@ paypal.Buttons({
         details.payer.name.given_name + " " + details.payer.name.surname;
       bookingData.paypalPayerEmail = details.payer.email_address;
       bookingData.depositPaid = "Yes";
-      bookingData.depositAmount = "$1";
+      bookingData.depositAmount = "$50";
 
       const response = await fetch("https://hibachi-backend-5rfq.onrender.com/book", {
         method: "POST",
