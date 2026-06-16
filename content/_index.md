@@ -9,8 +9,8 @@ title: "Hibachi at Home"
      text-decoration:none;border-radius:8px;font-weight:bold;">
      BOOK NOW
   </a>
-</p><br>
-
+</p>
+<br>
 <p align="center">
   <img src="/images/hibachi-fire.jpg" width="700">
 </p>
@@ -139,9 +139,31 @@ Chicken · Steak · Shrimp · Salmon · Tofu
 ## 📍 Area We Serve
 Houston • Katy • Sugar Land • Cypress • Missoury City • Pearland • Pasadena • The Woodlands • Richmond • Spring • Baytown • Galveston
 
+# 🎥 Watch Our Hibachi Shows
+
+See our chefs perform onion volcanoes, fire tricks, and live teppanyaki cooking on TikTok.
+
+<p align="center">
+  <a href="https://www.tiktok.com/@zwp1991"
+     target="_blank"
+     style="background:#000;color:white;padding:15px 25px;
+     text-decoration:none;border-radius:8px;font-weight:bold;">
+     Follow Us on TikTok
+  </a>
+</p>
+
 ## 📞 Book Your Event Today
 Phone call: 713-865-3251
 
 Email: authentichibachi@southflamellc.com
 
+Follow us on social media:
+  <a href="https://www.tiktok.com/@zwp1991"
+     target="_blank"
+     rel="noopener noreferrer">
+    <img src="/images/Tiktok_icon.png"
+         alt="TikTok"
+         width="50"
+         style="vertical-align:middle; margin-left:8px;">
+  </a>
 Let’s bring the grill to you 🔥
